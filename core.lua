@@ -79,7 +79,7 @@ callbacks.Register("AimbotTarget", function(e)
 end);
 
 callbacks.Register("FireGameEvent", "Count Misses", function(e)
-    if e:GetName() == "weapon_fire" and t.target ~= nil then--and input.IsButtonDown(1) ~= true then
+    if e:GetName() == "weapon_fire" and t.target ~= nil and input.IsButtonDown(1) ~= true then
         if client.GetPlayerIndexByUserID(e:GetInt("userid")) == client.GetLocalPlayerIndex() then
             if t.oldtarget ~= t.target:GetIndex() then
                 t.oldtarget = t.target:GetIndex();
